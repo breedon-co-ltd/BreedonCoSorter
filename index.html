@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>Breedon Co sorter</title>
+		<meta name="author" content="Syd Lambert (contractor for BreedonCo)"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<style>
+			*{
+				padding: 0px;
+				margin: 0px;
+				font-family: Open Sans;
+			}
+			body{
+				background-image:url('https://upload.wikimedia.org/wikipedia/commons/e/e4/StarfieldSimulation.gif');
+				background-size:100% 100%;
+				color: white;
+				text-shadow: 1px 1px 1px black;
+			}
+			#numbers{
+				margin-left: 50px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1><span style="color: red;">B</span><span style="color: red;">r</span><span style="color: orange;">e</span><span style="color: yellow;">e</span><span style="color: lime;">d</span><span style="color: cyan;">o</span><span style="color: blue;">n</span> <span style="color: purple;">C</span><span style="color: red;">o</span> <span style="color: orange;">S</span><span style="color: yellow;">o</span><span style="color: lime;">r</span><span style="color: red;">t</span><span style="color: cyan;">e</span><span style="color: blue;">r</span><span style="color: purple;">™</span></h1>
+		The Breedon Co Sorter™ uses our advanced bogo-related algorithms and technology designed by Breedon Co Ltd.<br/>
+		All rights reserved © Breedon Co Ltd<br />
+		<b>DO NOT DISTRIBUTE</b>
+		<hr />
+		<br />
+		<input type="text" id="number" placeholder="enter a number and press RETURN" />
+		<ul id="numbers">
+			
+		</ul>
+
+		<script>
+			document.querySelector("#number").addEventListener("keypress",e=>{
+				if(e.which==13){
+					if(!isNaN(parseInt(document.querySelector("#number").value))){
+						document.querySelector("#numbers").innerHTML+=`<li>${document.querySelector("#number").value}</li>`;
+						document.querySelector("#number").value="";
+					}
+					else{
+						while(true){
+							alert("OMG ERROR HSDKJDFKK FUCK DSDSKHFSALKHFSEHFLKSAHJE");
+						}
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
