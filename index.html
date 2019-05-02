@@ -32,9 +32,11 @@
 		<hr />
 		<br />
 		<input type="text" id="number" placeholder="enter a number and press RETURN" />
+		<br />
 		<ul id="numbers">
 			
 		</ul>
+		<input type="button" id="sort" value="sort" />
 
 		<script>
 			document.querySelector("#number").addEventListener("keypress",e=>{
@@ -50,6 +52,32 @@
 					}
 				}
 			});
+
+			document.querySelector("#sort").addEventListener("click",e=>{
+				setInterval(()=>{
+					
+					let numbers=getNumbers();
+					let sorted=getNumbers().sort();
+					if(numbers.every((e,i)=>e==sorted[i])){
+						return;
+					}
+					else{
+						permute();
+					}
+				},10);
+			});
+
+			function getNumbers(){
+				return [...document.querySelectorAll("li")].map(e=>parseInt(e.innerHTML));
+			}
+
+			function permute(){
+				let numbers=getNumbers();
+				let sublist=[];
+				[...Array(numbers.length)].forEach(e=>sublist.push(numbers.splice(Math.floor(Math.random()*numbers.length),1)[0]));
+				console.log(sublist);
+				document.querySelector("#numbers").innerHTML=sublist.map(e=>`<li>${e}</li>`).join("");
+			}
 		</script>
 	</body>
 </html>
